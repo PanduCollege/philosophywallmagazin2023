@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Philosophy</title>
+        <link rel="stylesheet" href="book.css">
+    </head>
+    <body>
+        
+        <div class="slider">
+            <div class="item">
+                <h1>Welcome!</h1>
+                <h3><br><br>Wall Magazinem <br>of <br>Philosophy</h3>
+                <br><h3>For session 2023-24</h3>
+            </div>
+            
+            <div class="item">
+                <h1>PHILOSOPHY</h1>
+                <img src="img/1.jpg"></img>
+            </div>
+            <div class="item">
+                <h1>ABOUT</h1>
+                <b>Theme of the Wall Magazine: ‘The Journey of Women Philosophers through Ages’<br><br></b>The name of our wall magazine itself is a self bound representing knowled -ge. It is a Buddhist word in origin. The term Prjna means knowledge and Paramita signifies perfecrt -ion. So etymologically, it means perfection in knowle -dge. In other words, it means perfect way of seeing the reality. This time, the 
+            </div>
+            <div class="item">
+                magazine contains the content representing the focus with its topic that is ‘The Journey of Women Philosophers through Ages’ which covers from ancient to modern period. The crux point that motivates us to pick out this theme is to explore the contribution of women over the ages to the world of philosophy and in this way to the entire field of knowledge’. Our journal has reflected both Indian and Western Philosophers. It contains some brief but important and unique informations about women philosophers of different times and places. 
+            </div>
+            <div class="item">
+                It comprises write up on ancient Indian philosopher Maitreyi - who refused wealth and wanted to share her husband's spiritual knowledge.  Bhamati- who is famous for practical use of knowledge and after whom Vachaspati Misra named Sankara bhashya as Bhamati. Brief write up on Heloise- a French nun and philosoph -er of 11 th century also contained here. She was famous as philosopher of love and friendship. Olivia Sabuco was a Spanish philosopher who analyzed holistic medical philosophy in late 16th century also contained.
+            </div>
+            <div class="item">
+                Here The magazine comprises three famous Feminist philosophers of different times eg. Grandmother of feminism Mary Wollstonecraft , feminist and existential philosopher Simone de Beauvoir and Carol Gilligan. It also contains Elizabeth Anscombe- a British analytic philosopher who was famous for her philosophical contributions and for her srong protest against nuclear weapon. <br><br>The magazine is arranged in such a way that starting from the left corner to down and then horizontally to upward right corner  
+            </div>
+            <div class="item">
+                describes the periods and  ages with women philosophers of that era. The middle logo is the theme itself with a watermark of yin and yang, surrounded by more women philosophers, on the top of it lies drawing of a girl in orange; different symbols highlighted in the head of the girl represents boundless possibilities carried by women in different fields. Again the two pigeons hold our magazine’s name Prajna Paramita which signifies that peace lies in knowledge. Craft indicates different shlokas and stories which try to impart  
+            </div>
+            <div class="item">
+                meaningful message with its readers. The Bouganvillea decorated on the boundary of the magazine symbolically represents our mother nature that holds us and which has been the root of us.
+                <br><br><br><button><a href="img/Photo of Wall magazine -2023.pdf" class="download">Click Here to Download Full Magazine<i class="fa fa-download"></i></a></button>
+            </div>
+            <button id="next">></button>
+            <button id="prev"><</button>
+        </div>
+    
+        <script src="book.js"></script>
+        <script>
+            let touchStartX = 0;
+            let touchEndX = 0;
+    
+            document.querySelector('.slider').addEventListener("touchstart", function (event) {
+                touchStartX = event.touches[0].clientX;
+            });
+    
+            document.querySelector('.slider').addEventListener("touchmove", function (event) {
+                touchEndX = event.touches[0].clientX;
+            });
+    
+            document.querySelector('.slider').addEventListener("touchend", function () {
+                handleSwipe();
+                touchStartX = 0;
+                touchEndX = 0;
+            });
+    
+            function handleSwipe() {
+                const swipeThreshold = 50;
+    
+                if (touchEndX - touchStartX > swipeThreshold) {
+                    // Swipe right
+                    document.getElementById('prev').click();
+                } else if (touchStartX - touchEndX > swipeThreshold) {
+                    // Swipe left
+                    document.getElementById('next').click();
+                }
+            }
+        </script>
+    </body>
+    </html>
